@@ -8,7 +8,7 @@
   "params": [
     {
       "name": "yearSelected",
-      "value": 200,
+      "value": 2020,
       "bind": {"input": "range", "min": 2010, "max": 2020, "step": 1, "name": "Year: "}
     }
     
