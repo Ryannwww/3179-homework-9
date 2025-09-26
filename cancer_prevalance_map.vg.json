@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Cancer Mortality Australia by State"},
+  "width": 860,
+  "height": 520,
+  "projection": {"type": "equalEarth"},
+  "params": [
+    {
+      "name": "yearSelected",
+      "value": 2020,
+      "bind": {"input": "range", "min": 2010, "max": 2020, "step": 1, "name": "Year: "}
+    }
+  ],
+  "data": {
+    "url": "https://github.com/Ryannwww/3179-homework-9/blob/main/ne_110m%20(1).json?short_path=7df98e2",
+    "format": { "type": "topojson", "feature": "ne_110m_admin_0_countries" }
+  },
+  "transform": [
+    {
+      "lookup": "properties.STATE_NAME",
+      "from": {
+        "data": {
+          "url": "cancer_mortality_clean.csv",
+          "format": {"type": "csv"}
+        },
+        "key": "state",
+        "fields": ["year", "sex", "Age-standardised rate 2024 Australian population (per 100,000", "deaths"]
+      }
+    },
+    { "filter": "datum.sex == 'Persons' && datum.year == yearSelected" }
+  ],
+  "mark": {"type": "geoshape"},
+  "encoding": {
+    "color": {
+      "field": "Age-standardised rate 2024 Australian population (per 100,000",
+      "type": "quantitative",
+      "title": "ASR (Persons) per 100,000",
+      "scale": {
+        "type": "quantize",
+        "nice": true,
+        "domain": [120, 280],
+        "range": ["#f7fbff","#deebf7","#c6dbef","#9ecae1","#6baed6","#4292c6","#2171b5","#084594"]
+      }
+    },
+    "tooltip": [
+      {"field": "properties.STATE_NAME", "type": "nominal", "title": "State/Territory"},
+      {"field": "year", "type": "quantitative", "title": "Year"},
+      {"field": "asr_persons", "type": "quantitative", "title": "ASR (Persons)", "format": ".1f"},
+      {"field": "deaths", "type": "quantitative", "title": "Deaths"}
+    ]
+  }
+}
