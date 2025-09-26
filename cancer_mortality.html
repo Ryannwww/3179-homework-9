@@ -30,11 +30,11 @@
       ],
       "data": {
         "url": "https://github.com/Ryannwww/3179-homework-9/blob/main/au-states-topo.json",
-        "format": { "type": "topojson", "feature": "ne_110m_admin_0_countries" }
+        "format": { "type": "topojson", "feature": "CED_2021_AUST_GDA94" }
       },
       "transform": [
         {
-          "lookup": "properties.STATE_NAME",
+          "lookup": "properties.STE_NAME21",
           "from": {
             "data": {
               "url": "cancer_mortality_clean.csv",
@@ -73,7 +73,7 @@
           }
         },
         "tooltip": [
-          { "field": "properties.STATE_NAME", "type": "nominal", "title": "State/Territory" },
+          { "field": "properties.STE_NAME21", "type": "nominal", "title": "State/Territory" },
           { "field": "year", "type": "quantitative", "title": "Year" },
           { "field": "asr_persons", "type": "quantitative", "title": "ASR (Persons)", "format": ".1f" },
           { "field": "deaths", "type": "quantitative", "title": "Deaths" }
@@ -88,3 +88,4 @@
 </body>
 
 </html>
+
