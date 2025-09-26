@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>AU Cancer Mortality Choropleth</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <!-- Vega libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-  <style>body{font-family:system-ui,Arial,sans-serif;margin:24px}</style>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+<script src="vega_lite_vis.js"></script>
+<title>First Vega-Lite graph </title>
 </head>
 <body>
-  <h1>AU Cancer Mortality Choropleth</h1>
+  <h1>AU Cancer Mortality map</h1>
   <div id="vis"></div>
-
   <script>
-    // Point to your Vega-Lite spec file (RAW URL, not blob)
-    const specUrl = "https://github.com/Ryannwww/3179-homework-9/blob/main/cancer_prevalance_map.vg.json";
+    const specUrl = "https://raw.githubusercontent.com/Ryannwww/3179-homework-9/main/au_cancer_choropleth.vg.json";
     vegaEmbed("#vis", specUrl, { mode: "vega-lite" }).catch(console.error);
   </script>
 </body>
