@@ -12,7 +12,7 @@
     }
   ],
   "data": {
-    "url": "https://github.com/Ryannwww/3179-homework-9/blob/main/au-states-topo.json",
+    "url": "https://github.com/Ryannwww/3179-homework-9/blob/main/cancer_mortality.json",
     "format": { "type": "topojson", "feature": "CED_2021_AUST_GDA94" }
   },
   "transform": [
@@ -50,6 +50,7 @@
     ]
   }
 }
+
 
 
 
