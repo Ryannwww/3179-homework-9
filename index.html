@@ -9,13 +9,19 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 <script src="vega_lite_vis.js"></script>
 <title>AU Cancer Mortality map </title>
+
 </head>
 <body>
   <h1>AU Cancer Mortality map</h1>
   <div id="vis"></div>
-  <script>
-    const specUrl = "https://raw.githubusercontent.com/Ryannwww/3179-homework-9/main/cancer_prevalence_map.vg.json";
-    vegaEmbed("#vis", specUrl, { mode: "vega-lite" }).catch(console.error);
-  </script>
+
+  <script type="text/javascript">
+
+  var spec2 = "cancer_prevalence_map.vg.json";
+  vegaEmbed('#choropleth_map', spec2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
 </body>
 </html>
