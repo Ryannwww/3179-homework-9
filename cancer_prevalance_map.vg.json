@@ -66,7 +66,12 @@
             "type": "threshold",
             "domain": [180, 190, 200, 210, 220, 230, 260],
             "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
-          }
+          },
+       "legend": {
+            "title": "Age-standardised rate(per 100,000)",
+            "titleFontSize": 10,         
+            "labelFontSize": 8         
+      }
         },
         "tooltip": [
           {"field": "properties.STE_NAME21", "type": "nominal", "title": "State/Territory"},
@@ -78,6 +83,7 @@
     }
   ]
 }
+
 
 
 
